@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap');
+
+/* stylelint-disable */
+/* CSS linting is disabled for Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+:root {
+  --theme-gradient-light: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+  --theme-gradient-dark: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+body {
+  @apply bg-gray-100 dark:bg-gray-900 transition-colors duration-300;
+  font-family: 'Cinzel', serif;
+}
+
+.theme-card {
+  @apply bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/30 backdrop-blur-sm;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+  @apply shadow-xl dark:shadow-gray-900/40;
+  transform: translateY(-2px);
+}
+
+.theme-border {
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+.theme-button {
+  @apply bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-lg
+         dark:bg-indigo-500 dark:hover:bg-indigo-600
+         transition-all duration-300;
+}
+
+.theme-button-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700
+         dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200
+         transition-all duration-300;
+}
+
+.theme-table th {
+  @apply bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200
+         border-b border-gray-200 dark:border-gray-700;
+}
+
+.theme-table tr {
+  @apply border-b border-gray-100 dark:border-gray-700
+         hover:bg-gray-50 dark:hover:bg-gray-800/50
+         transition-colors duration-200;
+}
+
+.theme-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-scroll::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-full;
+}
+
+.theme-scroll::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full
+         hover:bg-gray-400 dark:hover:bg-gray-500
+         transition-colors duration-200;
+}
+
+.glass-effect {
+  @apply backdrop-blur-sm bg-white/30 dark:bg-gray-800/30;
+}
+
+/* Slot Machine Styles */
+.slot-machine-container {
+  @apply relative;
+}
+
+.slot-window {
+  @apply relative overflow-hidden;
+  height: 120px;
+}
+
+.slot-window.dragging {
+  cursor: grabbing;
+}
+
+.slot-item {
+  @apply transition-transform duration-100;
+  user-select: none;
+}
+
+.slot-item.spinning {
+  animation: spin 0.1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-120px);
+  }
+}
+
+.crypto-details {
+  @apply mt-4 border border-gray-200 dark:border-gray-700;
+}

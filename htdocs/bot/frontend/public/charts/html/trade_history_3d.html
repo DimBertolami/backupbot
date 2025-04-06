@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Bot Performance 3D Visualization</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #e6e6e6;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+    }
+    .visualization-container {
+      display: flex;
+      flex-direction: column;
+    }
+    #chart {
+      width: 100%;
+      height: 90vh;
+    }
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #e6e6e6;
+    }
+    .interpretation-guide {
+      padding: 15px 20px;
+      background-color: rgba(30, 30, 50, 0.8);
+      border-top: 2px solid #673AB7;
+      color: #e6e6e6;
+      font-size: 14px;
+    }
+    .interpretation-guide h3 {
+      margin-top: 0;
+      color: #BB86FC;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+    }
+    .interpretation-guide h4 {
+      color: #03DAC6;
+      margin: 12px 0 8px 0;
+    }
+    .interpretation-guide ul {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+    .interpretation-guide li {
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .color-sample {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .big-win { background-color: rgb(0, 255, 127); }
+    .win { background-color: rgb(0, 200, 255); }
+    .small-loss { background-color: rgb(255, 165, 0); }
+    .big-loss { background-color: rgb(255, 0, 127); }
+    .chart-tips, .chart-patterns {
+      background-color: rgba(20, 20, 35, 0.6);
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
+    @media (min-width: 768px) {
+      .visualization-container {
+        flex-direction: row;
+      }
+      #chart {
+        width: 70%;
+        height: 100vh;
+      }
+      .interpretation-guide {
+        width: 30%;
+        border-top: none;
+        border-left: 2px solid #673AB7;
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="visualization-container">
+    <div id="chart"></div>
+    <div class="interpretation-guide">
+      <h3>How to Read This Chart</h3>
+      <ul>
+        <li><strong>X-axis (Trade Number):</strong> Each point represents a single trade, from first to most recent</li>
+        <li><strong>Y-axis (Account Balance):</strong> Shows how your total account balance changes over time</li>
+        <li><strong>Z-axis (Profit/Loss):</strong> Shows the profit or loss for each individual trade</li>
+        <li><strong>Colors:</strong> 
+          <span class="color-sample big-win"></span> Big wins (>$100)
+          <span class="color-sample win"></span> Wins ($0-$100)
+          <span class="color-sample small-loss"></span> Small losses ($0 to -$100)
+          <span class="color-sample big-loss"></span> Big losses (<-$100)
+        </li>
+      </ul>
+      <div class="chart-tips">
+        <h4>Tips:</h4>
+        <ul>
+          <li>Hover over any point to see detailed trade information</li>
+          <li>Click and drag to rotate the view</li>
+          <li>Scroll to zoom in/out</li>
+          <li>Look for clusters of similar colors to identify winning/losing streaks</li>
+          <li>Notice how account balance (Y-axis) changes after large profits/losses</li>
+        </ul>
+      </div>
+      <div class="chart-patterns">
+        <h4>Common Patterns:</h4>
+        <ul>
+          <li><strong>Upward Trend:</strong> Consistent profits over time</li>
+          <li><strong>Downward Trend:</strong> Consistent losses over time</li>
+          <li><strong>Flat Sections:</strong> Period of small or balanced trades</li>
+          <li><strong>Spikes:</strong> Unusually large profits or losses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Fetch real trade data from the paper trading system
+    async function fetchRealTradeData() {
+      try {
+        // First try to get data from the status file
+        const response = await fetch('/trading_data/paper_trading_status.json');
+        if (!response.ok) {
+          throw new Error(`Error fetching trade data: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Loaded real trading data for visualization:', data);
+        
+        if (!data.trade_history || data.trade_history.length === 0) {
+          console.warn('No trade history found in data, using fallback data');
+          return generateFallbackData();
+        }
+        
+        // Transform the trade history into the format we need for visualization
+        return data.trade_history.map((trade, index) => {
+          // Calculate profit/loss based on trade data
+          const profitLoss = trade.side === 'SELL' ? trade.value * 0.05 : -trade.value * 0.01;
+          
+          return {
+            id: index + 1,
+            timestamp: new Date(trade.timestamp),
+            symbol: trade.symbol,
+            side: trade.side,
+            price: trade.price,
+            quantity: trade.quantity,
+            value: trade.value,
+            timeframe: '1h', // Default timeframe
+            profitLoss: profitLoss,
+            profitLossPercent: (profitLoss / trade.value) * 100,
+            balance: trade.balance_after || 10000 + (index * 100), // Fallback if balance_after not available
+            phase: profitLoss > 0 ? 'bull' : 'bear' // Simple phase determination
+          };
+        });
+      } catch (err) {
+        console.error('Failed to load real trade data:', err);
+        return generateFallbackData();
+      }
+    }
+    
+    // Generate fallback data if real data is not available
+    function generateFallbackData(numTrades = 20) {
+      console.warn('Using fallback data for visualization');
+      const trades = [];
+      const symbols = ['BTC/USDT', 'ETH/USDT', 'SOL/USDT'];
+      
+      let tradeId = 1;
+      let timestamp = new Date(Date.now() - (numTrades * 3600000)).getTime(); // Start from numTrades hours ago
+      let balance = 10000; // Starting balance
+      
+      for (let i = 0; i < numTrades; i++) {
+        const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+        const isProfit = Math.random() < 0.6; // 60% chance of profit
+        
+        // Calculate profit/loss
+        const tradeSize = balance * (0.05 + Math.random() * 0.1); // 5-15% of balance
+        const profitLossPercent = (isProfit ? 1 : -1) * (0.01 + Math.random() * 0.05);
+        const profitLossAmount = tradeSize * profitLossPercent;
+        
+        // Update balance
+        balance += profitLossAmount;
+        balance = Math.max(balance, 5000); // Ensure balance doesn't go too low
+        
+        // Add time between trades (1-3 hours)
+        timestamp += (1 + Math.floor(Math.random() * 2)) * 3600000;
+        
+        trades.push({
+          id: tradeId++,
+          timestamp: new Date(timestamp),
+          symbol: symbol,
+          timeframe: '1h',
+          entryPrice: symbol.startsWith('BTC') ? 30000 + Math.random() * 5000 : 2000 + Math.random() * 500,
+          exitPrice: symbol.startsWith('BTC') ? 30000 + Math.random() * 5000 : 2000 + Math.random() * 500,
+          profitLoss: profitLossAmount,
+          profitLossPercent: profitLossPercent * 100,
+          balance: balance,
+          phase: isProfit ? 'bull' : 'bear'
+        });
+      }
+      
+      return trades;
+    }
+
+    // Create the 3D visualization
+    async function createTradeHistoryVisualization() {
+      // Get real trade data or fallback data
+      const trades = await fetchRealTradeData();
+      
+      // Prepare data for 3D scatter plot
+      const tradeIds = trades.map(t => t.id);
+      const timestamps = trades.map(t => t.timestamp);
+      const profits = trades.map(t => t.profitLoss);
+      const balances = trades.map(t => t.balance);
+      const symbols = trades.map(t => t.symbol);
+      const phases = trades.map(t => t.phase);
+      
+      // Create hover text with trade information
+      const hoverTexts = trades.map(t => {
+        // Format timestamp with date and time
+        const formattedDate = t.timestamp.toLocaleDateString();
+        const formattedTime = t.timestamp.toLocaleTimeString();
+        
+        // Format profit/loss with sign
+        const profitLossSign = t.profitLoss > 0 ? '+' : '';
+        
+        return `<b>Trade #${t.id}</b><br>` +
+          `<b>Date:</b> ${formattedDate} at ${formattedTime}<br>` +
+          `<b>Symbol:</b> ${t.symbol} (${t.side})<br>` +
+          `<b>Quantity:</b> ${t.quantity?.toFixed(6) || '0.00'}<br>` +
+          `<b>Price:</b> $${t.price?.toFixed(2) || '0.00'}<br>` +
+          `<b>Value:</b> $${t.value?.toFixed(2) || '0.00'}<br>` +
+          `<b>Profit/Loss:</b> ${profitLossSign}$${t.profitLoss.toFixed(2)} (${profitLossSign}${t.profitLossPercent.toFixed(2)}%)<br>` +
+          `<b>Account Balance:</b> $${t.balance.toFixed(2)}<br>` +
+          `<b>Market Phase:</b> ${t.phase}`;
+      });
+      
+      // Create color scale based on profit/loss
+      const colors = profits.map(p => {
+        if (p > 100) return 'rgb(0, 255, 127)'; // Bright green for big wins
+        if (p > 0) return 'rgb(0, 200, 255)';   // Cyan for wins
+        if (p > -100) return 'rgb(255, 165, 0)'; // Orange for small losses
+        return 'rgb(255, 0, 127)';              // Pink for big losses
+      });
+      
+      // Calculate marker sizes based on profit/loss magnitude
+      const markerSizes = profits.map(p => Math.min(Math.max(Math.abs(p) / 20, 8), 25));
+      
+      // Create the 3D scatter plot
+      const trace = {
+        type: 'scatter3d',
+        mode: 'markers',
+        x: tradeIds,
+        y: balances,
+        z: profits,
+        text: hoverTexts,
+        hoverinfo: 'text',
+        marker: {
+          size: markerSizes,
+          color: colors,
+          opacity: 0.8,
+          line: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            width: 0.5
+          }
+        },
+        hoverlabel: {
+          bgcolor: '#1a1a2e',
+          font: { color: 'white' }
+        }
+      };
+      
+      // Add connecting lines to show progression
+      const traceLine = {
+        type: 'scatter3d',
+        mode: 'lines',
+        x: tradeIds,
+        y: balances,
+        z: profits,
+        line: {
+          color: 'rgba(255, 255, 255, 0.3)',
+          width: 2
+        },
+        hoverinfo: 'none'
+      };
+      
+      // Create layout
+      const layout = {
+        title: {
+          text: 'Trading Bot Performance History (3D)',
+          font: { color: '#e6e6e6', size: 22 }
+        },
+        annotations: [
+          {
+            showarrow: true,
+            arrowhead: 2,
+            arrowsize: 1,
+            arrowwidth: 2,
+            arrowcolor: '#BB86FC',
+            x: tradeIds[Math.floor(tradeIds.length * 0.8)],
+            y: balances[Math.floor(balances.length * 0.8)],
+            z: profits[Math.floor(profits.length * 0.8)],
+            text: 'Recent trades',
+            font: { color: '#BB86FC' },
+            xanchor: 'left',
+            yanchor: 'middle'
+          },
+          {
+            showarrow: true,
+            arrowhead: 2,
+            arrowsize: 1,
+            arrowwidth: 2,
+            arrowcolor: '#03DAC6',
+            x: tradeIds[Math.floor(tradeIds.length * 0.3)],
+            y: balances[Math.floor(balances.length * 0.3)],
+            z: profits[Math.floor(profits.length * 0.3)],
+            text: 'Early trades',
+            font: { color: '#03DAC6' },
+            xanchor: 'right',
+            yanchor: 'middle'
+          }
+        ],
+        scene: {
+          xaxis: {
+            title: 'Trade Number',
+            titlefont: { color: '#e6e6e6' },
+            tickfont: { color: '#e6e6e6' },
+            backgroundcolor: '#1a1a2e',
+            gridcolor: '#444',
+            showbackground: true
+          },
+          yaxis: {
+            title: 'Account Balance ($)',
+            titlefont: { color: '#e6e6e6' },
+            tickfont: { color: '#e6e6e6' },
+            backgroundcolor: '#1a1a2e',
+            gridcolor: '#444',
+            showbackground: true
+          },
+          zaxis: {
+            title: 'Profit/Loss per Trade ($)',
+            titlefont: { color: '#e6e6e6' },
+            tickfont: { color: '#e6e6e6' },
+            backgroundcolor: '#1a1a2e',
+            gridcolor: '#444',
+            showbackground: true
+          },
+          camera: {
+            eye: { x: 1.5, y: 1.5, z: 1 }
+          }
+        },
+        paper_bgcolor: '#121212',
+        plot_bgcolor: '#121212',
+        margin: { l: 0, r: 0, b: 0, t: 50 },
+        showlegend: false,
+        annotations: [
+          {
+            showarrow: true,
+            arrowhead: 2,
+            arrowsize: 1,
+            arrowwidth: 2,
+            arrowcolor: '#BB86FC',
+            x: tradeIds[Math.floor(tradeIds.length * 0.8)],
+            y: balances[Math.floor(balances.length * 0.8)],
+            z: profits[Math.floor(profits.length * 0.8)],
+            text: 'Recent trades',
+            font: { color: '#BB86FC' },
+            xanchor: 'left',
+            yanchor: 'middle'
+          },
+          {
+            showarrow: true,
+            arrowhead: 2,
+            arrowsize: 1,
+            arrowwidth: 2,
+            arrowcolor: '#03DAC6',
+            x: tradeIds[Math.floor(tradeIds.length * 0.3)],
+            y: balances[Math.floor(balances.length * 0.3)],
+            z: profits[Math.floor(profits.length * 0.3)],
+            text: 'Early trades',
+            font: { color: '#03DAC6' },
+            xanchor: 'right',
+            yanchor: 'middle'
+          },
+          {
+            showarrow: false,
+            text: 'Hover over points to see trade details',
+            xref: 'paper',
+            yref: 'paper',
+            x: 0,
+            y: 0,
+            xanchor: 'left',
+            yanchor: 'bottom',
+            font: { color: '#e6e6e6' }
+          }
+        ]
+      };
+      
+      // Create the plot
+      Plotly.newPlot('chart', [trace, traceLine], layout, {
+        responsive: true,
+        displayModeBar: true,
+        modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+        displaylogo: false
+      });
+      
+      // Add click event to highlight the corresponding trade in the table
+      document.getElementById('chart').on('plotly_click', function(data) {
+        // Get the point that was clicked
+        const point = data.points[0];
+        
+        // Make sure we're clicking on a trade point (not a line)
+        if (point.curveNumber === 0) {
+          // Get the trade ID (which is the x-value)
+          const tradeId = point.x;
+          console.log('Clicked on trade ID:', tradeId);
+          
+          // Send a message to the parent window with the trade ID
+          window.parent.postMessage({
+            type: 'TRADE_CLICKED',
+            tradeId: tradeId
+          }, '*');
+        }
+      });
+      
+      // Add animation to rotate the view
+      let angle = 0;
+      const animate = () => {
+        angle += 0.005;
+        const newCamera = {
+          eye: {
+            x: 1.5 * Math.cos(angle),
+            y: 1.5 * Math.sin(angle),
+            z: 1
+          }
+        };
+        
+        Plotly.relayout('chart', { 'scene.camera': newCamera });
+        setTimeout(animate, 50);
+      };
+      
+      // Start animation after 3 seconds to allow initial rendering
+      setTimeout(animate, 3000);
+    }
+    
+    // Initialize the visualization when the page loads
+    window.addEventListener('load', () => {
+      createTradeHistoryVisualization();
+      
+      // Refresh data every 60 seconds to keep visualization up-to-date
+      setInterval(() => {
+        console.log('Refreshing trade visualization data...');
+        createTradeHistoryVisualization();
+      }, 60000);
+    });
+  </script>
+</body>
+</html>

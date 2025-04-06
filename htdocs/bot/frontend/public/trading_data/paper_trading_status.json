@@ -1,0 +1,32 @@
+{
+  "is_running": true,
+  "mode": "paper",
+  "balance": 10000,
+  "holdings": {
+    "BTCUSDT": 0,
+    "ETHUSDT": 0,
+    "ADAUSDT": 0,
+    "SOLUSDT": 0
+  },
+  "base_currency": "USDT",
+  "portfolio_value": 10000,
+  "performance": {
+    "total_trades": 0,
+    "win_rate": 0,
+    "profit_loss": 0,
+    "return_pct": 0.0,
+    "sharpe_ratio": 0,
+    "max_drawdown": 0.0
+  },
+  "trade_history": [],
+  "last_prices": {
+    "BTCUSDT": 83796.08,
+    "ETHUSDT": 1812.32,
+    "ADAUSDT": 0.6588,
+    "SOLUSDT": 121.1
+  },
+  "last_updated": "2025-04-05T03:38:45.527398",
+  "api_keys_configured": true,
+  "status": "active",
+  "last_update": "2025-04-05T23:38:11+00:00"
+}

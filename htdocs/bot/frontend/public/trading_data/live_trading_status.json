@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-04-06T09:26:37.625320",
+  "model_id": "inceptiontime_v1.0",
+  "signals": [
+    {
+      "symbol": "BTC/USDT",
+      "currentPrice": 52584.89,
+      "signal": "BUY",
+      "confidence": 0.7206194080709388,
+      "timestamp": "2025-04-06T09:26:37.625320",
+      "priceChange24h": -11.62
+    },
+    {
+      "symbol": "ETH/USDT",
+      "currentPrice": 3057.51,
+      "signal": "BUY",
+      "confidence": 0.6866856844656806,
+      "timestamp": "2025-04-06T09:26:37.625320",
+      "priceChange24h": -16.67
+    },
+    {
+      "symbol": "SOL/USDT",
+      "currentPrice": 146.58,
+      "signal": "SELL",
+      "confidence": 0.559981421884013,
+      "timestamp": "2025-04-06T09:26:37.625320",
+      "priceChange24h": -15.65
+    },
+    {
+      "symbol": "ADA/USDT",
+      "currentPrice": 0.50813267,
+      "signal": "SELL",
+      "confidence": 0.6552181244124204,
+      "timestamp": "2025-04-06T09:26:37.625320",
+      "priceChange24h": -15.66
+    },
+    {
+      "symbol": "BNB/USDT",
+      "currentPrice": 576.02,
+      "signal": "SELL",
+      "confidence": 0.7018470606210729,
+      "timestamp": "2025-04-06T09:26:37.625320",
+      "priceChange24h": -6.13
+    }
+  ],
+  "autoRefresh": true,
+  "thoughts": [
+    "Not enough historical data yet. Learning in progress...",
+    "Market is mixed. No clear trend direction yet.",
+    "Using model: inceptiontime_v1.0. Analyzing price patterns..."
+  ]
+}

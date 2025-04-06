@@ -1,0 +1,87 @@
+{
+    "config": {
+        "update_interval": "5m",
+        "auto_refresh": true,
+        "last_modified": "2025-04-02T11:18:08Z",
+        "mode": "paper",
+        "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "ADAUSDT",
+            "SOLUSDT"
+        ],
+        "base_currency": "USDT",
+        "initial_balance": 10000,
+        "risk_percentage": 2,
+        "intervals": [
+            "1h",
+            "4h"
+        ],
+        "stop_loss_pct": 5,
+        "take_profit_pct": 10,
+        "strategy_params": {
+            "short_window": 50,
+            "long_window": 200,
+            "rsi_period": 14,
+            "rsi_overbought": 70,
+            "rsi_oversold": 30
+        },
+        "api_key": "",
+        "api_secret": ""
+    },
+    "performance": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "profit_loss": 0,
+        "return_pct": 0.0,
+        "sharpe_ratio": 0,
+        "max_drawdown": 0.0
+    },
+    "equity_history": [
+        {
+            "timestamp": "2025-04-02T13:13:00.144827",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:13:02.295866",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:18:04.697358",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:23:06.797095",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:28:09.026189",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:33:11.127753",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:38:13.275084",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:43:15.409978",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T13:48:17.501750",
+            "equity": 10000
+        }
+    ],
+    "trade_history": [],
+    "final_balance": 10000,
+    "final_holdings": {
+        "BTCUSDT": 0,
+        "ETHUSDT": 0,
+        "ADAUSDT": 0,
+        "SOLUSDT": 0
+    },
+    "exported_at": "2025-04-02T13:50:41.656219"
+}

@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-04-05T16:30:00.000Z",
+  "services": {
+    "backend": {
+      "name": "Trading Engine",
+      "status": "active",
+      "pid": 12345,
+      "last_checked": "2025-04-05T23:38:16+00:00"
+    },
+    "signals": {
+      "name": "Trading Signals",
+      "status": "active",
+      "pid": 12346
+    },
+    "paper_trading": {
+      "name": "Paper Trading",
+      "status": "active",
+      "pid": 20090,
+      "trading_active": true,
+      "last_checked": "2025-04-05T23:38:11+00:00"
+    },
+    "database": {
+      "name": "Database",
+      "status": "active",
+      "pid": 12347,
+      "last_checked": "2025-04-05T23:38:16+00:00"
+    },
+    "frontend": {
+      "name": "Frontend",
+      "status": "active",
+      "pid": 12348
+    }
+  },
+  "logs": {
+    "backend": {
+      "path": "/home/dim/git/Cryptobot/logs/backend.log",
+      "size": 1024,
+      "updated": "2025-04-05T16:29:30.000Z"
+    },
+    "signals": {
+      "path": "/home/dim/git/Cryptobot/logs/signals.log",
+      "size": 2048,
+      "updated": "2025-04-05T16:29:45.000Z"
+    },
+    "paper_trading": {
+      "path": "/opt/lampp/htdocs/bot/logs/paper_trading.log",
+      "size": 4096,
+      "updated": "2025-04-05T16:30:00.000Z"
+    }
+  }
+}

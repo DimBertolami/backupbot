@@ -1,0 +1,125 @@
+.trading-signals-container {
+  width: 100%;
+}
+
+/* Signal card hover effects */
+.theme-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.theme-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Chart customizations */
+.recharts-wrapper .recharts-cartesian-grid-horizontal line,
+.recharts-wrapper .recharts-cartesian-grid-vertical line {
+  stroke: rgba(156, 163, 175, 0.2);
+}
+
+.recharts-tooltip-wrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Signal badge animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes highConfidencePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@keyframes veryHighConfidencePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes fireGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(255, 165, 0, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(255, 165, 0, 0.4));
+  }
+}
+
+.animate-pulse {
+  animation: veryHighConfidencePulse 1.5s infinite;
+}
+
+.bg-green-100, .bg-red-100, .bg-yellow-100 {
+  animation: pulse 2s infinite;
+}
+
+/* High confidence styling */
+.high-confidence {
+  position: relative;
+  z-index: 10;
+  animation: highConfidencePulse 2s infinite;
+}
+
+.very-high-confidence {
+  position: relative;
+  z-index: 20;
+  animation: veryHighConfidencePulse 1.5s infinite;
+}
+
+/* Fire emoji animation */
+.fire-emoji {
+  display: inline-block;
+  animation: fireGlow 1.5s infinite;
+  transform-origin: center;
+}
+
+/* Refresh button effects */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .theme-card {
+    background-color: rgba(31, 41, 55, 0.6);
+  }
+  
+  .recharts-tooltip-wrapper .recharts-default-tooltip {
+    background-color: rgba(17, 24, 39, 0.8) !important;
+    border-color: #4B5563 !important;
+  }
+  
+  .recharts-tooltip-wrapper .recharts-default-tooltip .recharts-tooltip-label,
+  .recharts-tooltip-wrapper .recharts-default-tooltip .recharts-tooltip-item {
+    color: #E5E7EB !important;
+  }
+}

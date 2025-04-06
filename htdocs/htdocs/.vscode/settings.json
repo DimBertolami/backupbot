@@ -1,0 +1,19 @@
+{
+    "git.ignoreLimitWarning": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "codium.codeCompletion.enable": true,
+    "cSpell.words": [
+        "APIKEY",
+        "APISECRET",
+        "Backtesting",
+        "bitvavo",
+        "chartjs",
+        "Coinlist",
+        "crossentropy",
+        "dotenv",
+        "historicaldata",
+        "logloss",
+        "lookback"
+    ],
+    "localaipilot.standalone.ollamaCodeModel": "deepseek-r1:1.5b"
+}

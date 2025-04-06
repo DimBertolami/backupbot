@@ -1,0 +1,325 @@
+{
+  "timestamp": "2025-04-06T09:26:37.656228",
+  "thoughts": [
+    {
+      "id": 2721,
+      "timestamp": "2025-04-06T09:26:37.644942",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: inceptiontime_v1.0. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2720,
+      "timestamp": "2025-04-06T09:26:37.636404",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market is mixed. No clear trend direction yet.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2719,
+      "timestamp": "2025-04-06T09:26:37.626733",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2718,
+      "timestamp": "2025-04-06T09:21:37.570553",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: temporal_fusion_transformer_v1. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2717,
+      "timestamp": "2025-04-06T09:21:37.559667",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market is mixed. No clear trend direction yet.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2716,
+      "timestamp": "2025-04-06T09:21:37.541873",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2715,
+      "timestamp": "2025-04-06T09:16:37.455206",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: transformer_v1.2. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2714,
+      "timestamp": "2025-04-06T09:16:37.437660",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market seems bullish overall. More buy signals than sells.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2713,
+      "timestamp": "2025-04-06T09:16:37.261425",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2712,
+      "timestamp": "2025-04-06T09:07:46.371806",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: temporal_fusion_transformer_v1. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2711,
+      "timestamp": "2025-04-06T09:07:46.357550",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market seems bullish overall. More buy signals than sells.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2710,
+      "timestamp": "2025-04-06T09:07:46.342364",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2709,
+      "timestamp": "2025-04-06T09:02:46.252597",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: lstm_gru_ensemble. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2708,
+      "timestamp": "2025-04-06T09:02:46.237340",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market seems bullish overall. More buy signals than sells.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2707,
+      "timestamp": "2025-04-06T09:02:46.070177",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2706,
+      "timestamp": "2025-04-06T08:57:45.919194",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: transformer_v1.2. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2705,
+      "timestamp": "2025-04-06T08:57:45.907609",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market seems bullish overall. More buy signals than sells.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2704,
+      "timestamp": "2025-04-06T08:57:45.888314",
+      "thought_type": "trading_analysis",
+      "thought_content": "Not enough historical data yet. Learning in progress...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2703,
+      "timestamp": "2025-04-06T08:52:09.272067",
+      "thought_type": "trading_analysis",
+      "thought_content": "Using model: temporal_fusion_transformer_v1. Analyzing price patterns...",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    },
+    {
+      "id": 2702,
+      "timestamp": "2025-04-06T08:52:09.258730",
+      "thought_type": "trading_analysis",
+      "thought_content": "Market is mixed. No clear trend direction yet.",
+      "symbol": null,
+      "confidence": null,
+      "metrics": {
+        "total_profit": 0,
+        "win_rate": 0,
+        "total_trades": 0,
+        "avg_profit_per_trade": 0,
+        "best_performing_symbol": null,
+        "best_success_rate": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+    "config": {
+        "update_interval": "5m",
+        "auto_refresh": true,
+        "last_modified": "2025-04-02T11:18:08Z",
+        "mode": "paper",
+        "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "ADAUSDT",
+            "SOLUSDT"
+        ],
+        "base_currency": "USDT",
+        "initial_balance": 10000,
+        "risk_percentage": 2,
+        "intervals": [
+            "1h",
+            "4h"
+        ],
+        "stop_loss_pct": 5,
+        "take_profit_pct": 10,
+        "strategy_params": {
+            "short_window": 50,
+            "long_window": 200,
+            "rsi_period": 14,
+            "rsi_overbought": 70,
+            "rsi_oversold": 30
+        },
+        "api_key": "",
+        "api_secret": ""
+    },
+    "performance": {
+        "total_trades": 13,
+        "win_rate": 0,
+        "profit_loss": -4.620736000000761,
+        "return_pct": -0.046207360000007615,
+        "sharpe_ratio": 0,
+        "max_drawdown": 0.07647994852097667
+    },
+    "equity_history": [
+        {
+            "timestamp": "2025-04-02T11:31:15.057756",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-02T11:31:17.941409",
+            "equity": 10000.035211
+        },
+        {
+            "timestamp": "2025-04-02T11:36:21.045395",
+            "equity": 9999.993618999999
+        },
+        {
+            "timestamp": "2025-04-02T11:41:24.349912",
+            "equity": 9999.521394
+        },
+        {
+            "timestamp": "2025-04-02T11:46:28.271801",
+            "equity": 10000.065569999999
+        },
+        {
+            "timestamp": "2025-04-02T11:51:31.379545",
+            "equity": 9998.841903999999
+        },
+        {
+            "timestamp": "2025-04-02T11:56:34.288711",
+            "equity": 9998.728076999998
+        },
+        {
+            "timestamp": "2025-04-02T12:01:36.993375",
+            "equity": 9999.484105
+        },
+        {
+            "timestamp": "2025-04-02T12:06:40.193074",
+            "equity": 9996.332904999997
+        },
+        {
+            "timestamp": "2025-04-02T12:11:43.383575",
+            "equity": 9995.027934999998
+        },
+        {
+            "timestamp": "2025-04-02T12:16:46.483921",
+            "equity": 9996.908914
+        },
+        {
+            "timestamp": "2025-04-02T12:21:50.185364",
+            "equity": 9993.779090999999
+        },
+        {
+            "timestamp": "2025-04-02T12:26:52.728274",
+            "equity": 9994.101963
+        },
+        {
+            "timestamp": "2025-04-02T12:31:55.307639",
+            "equity": 9992.417524999999
+        },
+        {
+            "timestamp": "2025-04-02T12:36:57.833405",
+            "equity": 9995.379264
+        }
+    ],
+    "trade_history": [
+        {
+            "timestamp": "2025-04-02T11:31:15.995217",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.1067,
+            "price": 1872.99,
+            "value": 199.84803300000002,
+            "balance_after": 9800.151967,
+            "holdings_after": 0.1067,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T11:36:18.988051",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.1046,
+            "price": 1872.95,
+            "value": 195.91057,
+            "balance_after": 9604.241397,
+            "holdings_after": 0.2113,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T11:41:22.092595",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.1026,
+            "price": 1870.72,
+            "value": 191.935872,
+            "balance_after": 9412.305525,
+            "holdings_after": 0.31389999999999996,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T11:46:25.321964",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.1005,
+            "price": 1872.47,
+            "value": 188.18323500000002,
+            "balance_after": 9224.12229,
+            "holdings_after": 0.4144,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T11:51:29.343017",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0986,
+            "price": 1869.46,
+            "value": 184.328756,
+            "balance_after": 9039.793533999999,
+            "holdings_after": 0.513,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T11:56:32.345908",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0967,
+            "price": 1869.28,
+            "value": 180.75937599999997,
+            "balance_after": 8859.034157999999,
+            "holdings_after": 0.6097,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:06:38.048138",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0949,
+            "price": 1865.33,
+            "value": 177.019817,
+            "balance_after": 8682.014340999998,
+            "holdings_after": 0.7046,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:11:41.337928",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0931,
+            "price": 1863.42,
+            "value": 173.48440200000002,
+            "balance_after": 8508.529938999998,
+            "holdings_after": 0.7977,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:16:44.429322",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0912,
+            "price": 1865.76,
+            "value": 170.15731200000002,
+            "balance_after": 8338.372626999999,
+            "holdings_after": 0.8889,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:21:47.391149",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0895,
+            "price": 1862.32,
+            "value": 166.67764,
+            "balance_after": 8171.694986999999,
+            "holdings_after": 0.9784,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:26:51.019930",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0877,
+            "price": 1862.64,
+            "value": 163.353528,
+            "balance_after": 8008.341458999999,
+            "holdings_after": 1.0661,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:31:53.574473",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.086,
+            "price": 1861.06,
+            "value": 160.05115999999998,
+            "balance_after": 7848.290298999999,
+            "holdings_after": 1.1521000000000001,
+            "type": "paper"
+        },
+        {
+            "timestamp": "2025-04-02T12:36:56.127931",
+            "symbol": "ETHUSDT",
+            "side": "BUY",
+            "quantity": 0.0842,
+            "price": 1863.62,
+            "value": 156.91680399999998,
+            "balance_after": 7691.373494999999,
+            "holdings_after": 1.2363000000000002,
+            "type": "paper"
+        }
+    ],
+    "final_balance": 7691.373494999999,
+    "final_holdings": {
+        "BTCUSDT": 0,
+        "ETHUSDT": 1.2363000000000002,
+        "ADAUSDT": 0,
+        "SOLUSDT": 0
+    },
+    "exported_at": "2025-04-02T12:39:39.087118"
+}

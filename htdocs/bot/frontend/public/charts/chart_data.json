@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-04-05T23:44:46.000000",
+  "chartPaths": {
+    "candlestick": "charts/candlestick.png",
+    "indicators": "charts/indicators.png",
+    "signals": "charts/signals.png",
+    "price_3d_html": "charts/html/price_3d.html",
+    "signals_3d_html": "charts/html/signals_3d.html"
+  }
+}

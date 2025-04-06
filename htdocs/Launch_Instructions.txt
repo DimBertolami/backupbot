@@ -1,0 +1,36 @@
+#	------------------------------------------------------
+#	- Startup of the backend, API, and frontend services - 
+#	------------------------------------------------------
+	
+									# Summary: 
+
+									# backend: 
+under directory: /home/dim/git/Cryptobot
+									# to start backend services
+./startup.sh 		
+									# will gracefully (hopefully) shutdown backend
+./stop 			
+
+
+									# frontend:
+under directory: /opt/lampp/htdocs/bot/frontend
+									#run the dev environment
+npm run dev 					
+
+
+									# paper trading on binance:
+under director: /opt/lampp/htdocs/bot/
+									# Start paper trading
+python paper_trading_cli.py start
+									# Check trading status
+python paper_trading_cli.py status
+									# Stop trading
+python paper_trading_cli.py stop
+									# Switch to live trading (requires API keys)
+python paper_trading_cli.py switch live
+									# Set API keys
+python paper_trading_cli.py api YOUR_API_KEY YOUR_API_SECRET
+									# Reset account to initial state
+python paper_trading_cli.py reset
+									# Export trading results
+python paper_trading_cli.py export

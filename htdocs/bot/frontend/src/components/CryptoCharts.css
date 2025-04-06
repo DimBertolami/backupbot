@@ -1,0 +1,426 @@
+.crypto-charts {
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(15, 23, 42, 0.03);
+  margin-bottom: 2rem;
+}
+
+.dark .crypto-charts {
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+.charts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-charts h2 {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.charts-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.update-time {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.visibility-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 0.5rem;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.visibility-toggle:hover {
+  background-color: rgba(79, 70, 229, 0.2);
+}
+
+.dark .visibility-toggle {
+  background-color: rgba(79, 70, 229, 0.15);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: #818cf8;
+}
+
+/* Hidden charts state */
+.hidden-charts {
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.charts-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(15, 23, 42, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .charts-controls {
+  background-color: rgba(15, 23, 42, 0.4);
+}
+
+/* Carousel Styles */
+.chart-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  min-height: 650px; /* Increased height for 3D visualizations */
+}
+
+.carousel-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-slide {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  margin: 0 1rem;
+}
+
+.carousel-nav:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Enhanced Navigation Controls */
+.carousel-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.scroll-button {
+  padding: 0.5rem 1.25rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scroll-button:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .scroll-button {
+  background-color: #4f46e5;
+}
+
+.dark .scroll-button:hover {
+  background-color: #4338ca;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.carousel-dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Individual Chart Styling */
+.chart-container {
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Professional color themes for each chart type */
+.chart-candlestick {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-left: 4px solid #3b82f6;
+}
+
+.chart-price_3d {
+  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%);
+  border-left: 4px solid #0ea5e9;
+}
+
+.chart-indicators, .chart-indicators_combined {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border-left: 4px solid #8b5cf6;
+}
+
+.chart-signals {
+  background: linear-gradient(135deg, #365314 0%, #166534 100%);
+  border-left: 4px solid #22c55e;
+}
+
+.chart-signals_3d {
+  background: linear-gradient(135deg, #713f12 0%, #854d0e 100%);
+  border-left: 4px solid #f59e0b;
+}
+
+.chart-container h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.chart-candlestick h3::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.chart-price_3d h3::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #0ea5e9;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.chart-indicators h3::before,
+.chart-indicators_combined h3::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.chart-signals h3::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.chart-signals_3d h3::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.chart-image,
+.chart-iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.chart-iframe {
+  height: 600px;
+  background-color: white;
+  border: none;
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dark .chart-iframe {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+/* No chart placeholder */
+.no-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 0.5rem;
+  color: #9ca3af;
+}
+
+.refresh-button {
+  padding: 0.5rem 1.25rem;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
+.refresh-button:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.refresh-button:disabled {
+  background-color: #4b5563;
+  cursor: not-allowed;
+}
+
+/* Loading/Error states */
+.loading, .error, .no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 0.75rem;
+}
+
+.loading {
+  background-color: rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+}
+
+.error {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.no-data {
+  background-color: rgba(75, 85, 99, 0.2);
+  color: #9ca3af;
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Light mode adjustments */
+:root:not(.dark) .chart-candlestick {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+  border-left: 4px solid #3b82f6;
+}
+
+:root:not(.dark) .chart-price_3d {
+  background: linear-gradient(135deg, #e0f7ff 0%, #bae6fd 100%);
+  border-left: 4px solid #0ea5e9;
+}
+
+:root:not(.dark) .chart-indicators,
+:root:not(.dark) .chart-indicators_combined {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  border-left: 4px solid #8b5cf6;
+}
+
+:root:not(.dark) .chart-signals {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-left: 4px solid #22c55e;
+}
+
+:root:not(.dark) .chart-signals_3d {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #f59e0b;
+}
+
+:root:not(.dark) .chart-container h3 {
+  color: #1e293b;
+}
+
+:root:not(.dark) .carousel-nav {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #1e293b;
+}
+
+:root:not(.dark) .carousel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+:root:not(.dark) .carousel-dot {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+:root:not(.dark) .carousel-dot.active {
+  background-color: #4b5563;
+}
+
+:root:not(.dark) .no-chart {
+  background-color: rgba(243, 244, 246, 0.8);
+  color: #6b7280;
+}

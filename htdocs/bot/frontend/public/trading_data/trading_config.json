@@ -1,0 +1,30 @@
+{
+    "update_interval": "5m",
+    "auto_refresh": true,
+    "last_modified": "2025-04-02T11:18:08Z",
+    "mode": "paper",
+    "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "ADAUSDT",
+        "SOLUSDT"
+    ],
+    "base_currency": "USDT",
+    "initial_balance": 10000,
+    "risk_percentage": 2,
+    "intervals": [
+        "1h",
+        "4h"
+    ],
+    "stop_loss_pct": 5,
+    "take_profit_pct": 10,
+    "strategy_params": {
+        "short_window": 50,
+        "long_window": 200,
+        "rsi_period": 14,
+        "rsi_overbought": 70,
+        "rsi_oversold": 30
+    },
+    "api_key": "X8HpKiRKv6fNCulGEV2ReFpgyeS4wT0SWgokopvObB6ICUADi5nOEUZNFbcWUP9I",
+    "api_secret": "qeJ3x3SByFxFepLXrBqkWkSYijPt2DjvNA1MVA7fykgOqgUw6Jrb0Cmmvm7DWqWs"
+}

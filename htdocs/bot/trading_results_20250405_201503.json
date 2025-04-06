@@ -1,0 +1,61 @@
+{
+    "config": {
+        "mode": "paper",
+        "symbols": [
+            "BTCUSDT",
+            "ETHUSDT",
+            "BNBUSDT",
+            "ADAUSDT",
+            "DOGEUSDT"
+        ],
+        "base_currency": "USDT",
+        "initial_balance": 10000,
+        "risk_percentage": 2,
+        "strategy_params": {
+            "short_window": 50,
+            "long_window": 200,
+            "rsi_period": 14,
+            "rsi_overbought": 70,
+            "rsi_oversold": 30
+        },
+        "intervals": [
+            "1h",
+            "4h"
+        ],
+        "stop_loss_pct": 5,
+        "take_profit_pct": 10,
+        "api_key": "X8HpKiRKv6fNCulGEV2ReFpgyeS4wT0SWgokopvObB6ICUADi5nOEUZNFbcWUP9I",
+        "api_secret": "qeJ3x3SByFxFepLXrBqkWkSYijPt2DjvNA1MVA7fykgOqgUw6Jrb0Cmmvm7DWqWs",
+        "auto_execute_suggested_trades": true,
+        "min_confidence_threshold": 0.8,
+        "suggested_trade_refresh_interval": 60
+    },
+    "performance": {
+        "total_trades": 0,
+        "win_rate": 0,
+        "profit_loss": 0,
+        "return_pct": 0.0,
+        "sharpe_ratio": 0,
+        "max_drawdown": 0.0
+    },
+    "equity_history": [
+        {
+            "timestamp": "2025-04-05T20:10:21.871402",
+            "equity": 10000
+        },
+        {
+            "timestamp": "2025-04-05T20:10:25.464837",
+            "equity": 10000
+        }
+    ],
+    "trade_history": [],
+    "final_balance": 10000,
+    "final_holdings": {
+        "BTCUSDT": 0,
+        "ETHUSDT": 0,
+        "BNBUSDT": 0,
+        "ADAUSDT": 0,
+        "DOGEUSDT": 0
+    },
+    "exported_at": "2025-04-05T20:15:03.027304"
+}

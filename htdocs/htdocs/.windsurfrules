@@ -1,0 +1,40 @@
+#backend
+the backend for this project is located under: /home/dim/git/Cryptobot and is started by executing ./startup.sh, to stop the backend services, execute stop.sh
+#frontend
+the frontend for this project is located under: /opt/lampp/htdocs/bot/frontend
+#paper trader
+the paper trading script is located here: /opt/lampp/htdocs/bot/paper_trading_cli.py
+available parameters for this script: start, status, stop, switch, api, reset, export
+python paper_trading_cli.py start
+python paper_trading_cli.py status
+python paper_trading_cli.py stop
+python paper_trading_cli.py switch live
+python paper_trading_cli.py api YOUR_API_KEY YOUR_API_SECRET
+python paper_trading_cli.py reset
+python paper_trading_cli.py export
+
+#database
+the database for this project is located under: /home/dim/git/Cryptobot/db
+
+#logs
+the logs for this project are located under: /home/dim/git/Cryptobot/logs
+Log files:
+  - Backend: /home/dim/git/Cryptobot/logs/backend.log
+  - Frontend: /home/dim/git/Cryptobot/logs/frontend.log
+  - Paper Trading: /opt/lampp/htdocs/bot/logs/paper_trading.log
+  - Database: /home/dim/git/Cryptobot/logs/db.log
+
+#configuration
+the configuration for this project is located under: /home/dim/git/Cryptobot/config
+
+#data
+the data for this project is located under: /home/dim/git/Cryptobot/data
+
+#scripts
+the scripts for this project are located under: /home/dim/git/Cryptobot/scripts
+
+#other
+the other files for this project are located under: /home/dim/git/Cryptobot
+
+#package ready for git:
+/opt/lampp/htdocs/cryptobot-package

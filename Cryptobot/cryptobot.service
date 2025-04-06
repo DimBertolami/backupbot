@@ -1,0 +1,17 @@
+[Unit]
+Description=Crypto Trading Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=dim
+WorkingDirectory=/home/dim/git/Cryptobot
+ExecStart=/bin/bash /home/dim/git/Cryptobot/startup.sh --service
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=cryptobot
+
+[Install]
+WantedBy=multi-user.target
